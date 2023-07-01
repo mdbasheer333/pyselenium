@@ -1,0 +1,10 @@
+{
+    "name": "basheer",
+    "age": 30,
+    "prof": "tester",
+    "lang": [
+        "telugu",
+        "hindi",
+        "eng"
+    ]
+}
