@@ -9,8 +9,8 @@ def ui_browser(browser_env):
     print("browser is " + browser_env)
     if browser_env == "chrome":
         service = Service()
-options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(service=service, options=options)
+	options = webdriver.ChromeOptions()
+	driver = webdriver.Chrome(service=service, options=options)
     elif browser_env == "ff":
         driver = webdriver.Firefox()
     elif browser_env == "edge":
