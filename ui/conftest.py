@@ -9,8 +9,8 @@ def ui_browser(browser_env):
     print("browser is " + browser_env)
     if browser_env == "chrome":
         service = Service()
-	options = webdriver.ChromeOptions()
-	driver = webdriver.Chrome(service=service, options=options)
+        options = webdriver.ChromeOptions()
+        driver = webdriver.Chrome(service=service, options=options)
     elif browser_env == "ff":
         driver = webdriver.Firefox()
     elif browser_env == "edge":
@@ -22,7 +22,8 @@ def ui_browser(browser_env):
             "browserVersion": "109.0.5414.120"
         }
         driver = webdriver.Remote(
-            command_executor="http://10.0.0.10:4444", desired_capabilities={'browserName': 'chrome', 'javascriptEnabled': True})
+            command_executor="http://10.0.0.10:4444",
+            desired_capabilities={'browserName': 'chrome', 'javascriptEnabled': True})
 
     else:
         raise Exception("given wrong browser name ", browser_env)
