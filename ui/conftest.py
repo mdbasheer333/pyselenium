@@ -1,13 +1,16 @@
 import pytest
 from selenium import webdriver
 import os
+from selenium.webdriver.chrome.service import Service
 
 
 @pytest.fixture(scope="function")
 def ui_browser(browser_env):
     print("browser is " + browser_env)
     if browser_env == "chrome":
-        driver = webdriver.Chrome()
+        service = Service()
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=service, options=options)
     elif browser_env == "ff":
         driver = webdriver.Firefox()
     elif browser_env == "edge":
