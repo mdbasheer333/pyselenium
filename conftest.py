@@ -30,6 +30,7 @@ def browser_env(request):
     logging.info("env to load is " + env_to_load)
     load_dotenv(dotenv_path=os.path.abspath(os.curdir) + "\\" + env_to_load)
     print("env is " + env_to_load)
+    print(os.getenv("browser"))
     #print("browser is " + os.getenv("browser"))
     logging.info("browser is " + os.getenv("browser"))
     return os.getenv("browser")
