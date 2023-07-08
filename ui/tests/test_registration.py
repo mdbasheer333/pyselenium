@@ -15,7 +15,7 @@ class TestRegisterUser:
 
         register_page_obj = RegisterPage(ui_browser)
 
-        with open("sample.json", 'r') as json_file:
+        with open("registration.json", 'r') as json_file:
             register_data = json.load(json_file)
         register_data = register_data
 

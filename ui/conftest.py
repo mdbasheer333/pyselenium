@@ -2,21 +2,21 @@ import pytest
 from selenium import webdriver
 import os
 from selenium.webdriver.chrome.service import Service
-
+import logging
+from selenium.webdriver.remote.remote_connection import LOGGER
 
 @pytest.fixture(scope="function")
 def ui_browser(browser_env):
     print("browser is " + browser_env)
     if browser_env == "chrome":
-        # service = Service(executable_path=)
-        options = webdriver.ChromeOptions()
-        driver = webdriver.Chrome(options=options)
+        print(os.path.abspath(os.curdir) + "\\ui\\drivers\\chromedriver.exe")
+        service = Service(executable_path=os.path.abspath(os.curdir) + "\\ui\\drivers\\chromedriver.exe")
+        driver = webdriver.Chrome(service=service)
     elif browser_env == "ff":
         driver = webdriver.Firefox()
     elif browser_env == "edge":
-        print("(((((((((((((((((((((((((((")
-        print(os.path.abspath(os.curdir)+"\\drivers\\msedgedriver.exe")
-        service = Service(executable_path=os.path.abspath(os.curdir)+"\\drivers\\msedgedriver.exe")
+        print(os.path.abspath(os.curdir)+"\\ui\\drivers\\msedgedriver.exe")
+        service = Service(executable_path=os.path.abspath(os.curdir)+"\\ui\\drivers\\msedgedriver.exe")
         driver = webdriver.Edge(service=service)
     elif browser_env == "remote_chrome":
         browser_capabilities = {
@@ -31,6 +31,7 @@ def ui_browser(browser_env):
     else:
         raise Exception("given wrong browser name ", browser_env)
     driver.maximize_window()
+    LOGGER.setLevel(logging.CRITICAL)
     yield driver
     driver.quit()
 
