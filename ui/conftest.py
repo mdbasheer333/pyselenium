@@ -14,7 +14,7 @@ def ui_browser(browser_env):
     elif browser_env == "ff":
         driver = webdriver.Firefox()
     elif browser_env == "edge":
-        driver = webdriver.Edge()
+        driver = webdriver.Edge(executable_path=os.path.abspath(os.curdir)+"drivers//exedgedriver.exe")
     elif browser_env == "remote_chrome":
         browser_capabilities = {
             "platformName": "Windows 7",
