@@ -32,4 +32,4 @@ def browser_env(request):
     print("env is " + env_to_load)
     print("browser is " + request.config.getoption("browser"))
     logging.info("browser is " + request.config.getoption("browser"))
-    return os.getenv("browser")
+    return request.config.getoption("browser")
