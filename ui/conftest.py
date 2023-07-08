@@ -8,13 +8,16 @@ from selenium.webdriver.chrome.service import Service
 def ui_browser(browser_env):
     print("browser is " + browser_env)
     if browser_env == "chrome":
-        service = Service()
+        # service = Service(executable_path=)
         options = webdriver.ChromeOptions()
-        driver = webdriver.Chrome(service=service, options=options)
+        driver = webdriver.Chrome(options=options)
     elif browser_env == "ff":
         driver = webdriver.Firefox()
     elif browser_env == "edge":
-        driver = webdriver.Edge(executable_path=os.path.abspath(os.curdir)+"drivers//exedgedriver.exe")
+        print("(((((((((((((((((((((((((((")
+        print(os.path.abspath(os.curdir)+"\\drivers\\msedgedriver.exe")
+        service = Service(executable_path=os.path.abspath(os.curdir)+"\\drivers\\msedgedriver.exe")
+        driver = webdriver.Edge(service=service)
     elif browser_env == "remote_chrome":
         browser_capabilities = {
             "platformName": "Windows 7",
