@@ -1,0 +1,9 @@
+https://reqres.in/
+https://httpbin.org/#/
+https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user
+
+all users: https://api.github.com/users
+specific user: https://api.github.com/users/mdbasheer333
+
+create repo: https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-for-the-authenticated-user
+https://docs.github.com/en/rest/quickstart?apiVersion=2022-11-28
