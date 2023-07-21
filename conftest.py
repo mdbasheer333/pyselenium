@@ -33,3 +33,13 @@ def browser_env(request):
     print("browser is " + request.config.getoption("browser"))
     logging.info("browser is " + request.config.getoption("browser"))
     return os.getenv("browser")
+
+
+@pytest.fixture(scope="session")
+def api_env(request):
+    env_to_load = '.env.' + request.config.getoption("--environment")
+    print("env to load is " + env_to_load)
+    logging.info("env to load is " + env_to_load)
+    print(os.path.abspath(os.curdir))
+    load_dotenv(dotenv_path=os.path.abspath(os.curdir).replace("api", "") + "\\" + env_to_load)
+    return os.getenv("env_api")

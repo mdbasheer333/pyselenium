@@ -8,7 +8,7 @@ class TestLogin:
 
     @pytest.mark.regression
     def test_login(self, ui_browser):
-        url = os.getenv("qa_env")
+        url = os.getenv("env_web")
         ui_browser.get(url)
         login_page = LoginPage(ui_browser)
         login_page.login_to_app("dummy@gmail.com", "bash#1234")
