@@ -12,6 +12,7 @@ class JiraApi:
         }
 
     def getGitUser(self, api_env, userid):
+        print(f"{api_env}/users/{userid}")
         self.resp = requests.get(f"{api_env}/users/{userid}")
         return self.resp
 
