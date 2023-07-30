@@ -3,13 +3,15 @@ import requests
 from requests.auth import HTTPBasicAuth
 from requests.auth import HTTPDigestAuth
 
-# def basic_auth_demo():
-#     basic = HTTPBasicAuth('user', 'pass')
-#     # resp = requests.get('https://httpbin.org/basic-auth/user/pass', auth=basic)
-#     resp = requests.get('https://httpbin.org/basic-auth/user/pass', auth=basic)
-#     print(resp.headers)
-#     print(resp.status_code)
-#     print(resp.json())
+
+def basic_auth_demo():
+    basic = HTTPBasicAuth('user', 'pass')
+    # resp = requests.get('https://httpbin.org/basic-auth/user/pass', auth=basic)
+    resp = requests.get('https://httpbin.org/basic-auth/user/pass', auth=basic)
+    print(resp.headers)
+    print(resp.status_code)
+    print(resp.json())
+
 
 def basic_digestive_demo():
     basic = HTTPBasicAuth('user', 'pass')
